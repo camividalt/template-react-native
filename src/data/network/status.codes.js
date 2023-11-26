@@ -1,0 +1,17 @@
+export const LOADING = 'loading';
+export const EVICTED = 'evicted';
+export const SUCCESS = '200';
+export const ACCEPTED = 202;
+export const CREATED = 201;
+export const NO_CONTENT = 204;
+export const PARTIAL_CONTENT = 206;
+export const BAD_REQUEST = 400;
+export const UNAUTHORIZED = 401;
+export const NOT_FOUND = 404;
+export const REQUEST_TIMEOUT = 408;
+export const REQUEST_FAILED_STATUS = 409;
+export const SERVER_ERROR = 500;
+export const SERVER_ERROR_STRING = '500';
+export const BAD_GATEWAY = 502;
+export const GATEWAY_TIMEOUT = 504;
+export const FILE_READER_ERROR = 'FILE_READER_ERROR'; 
