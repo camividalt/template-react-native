@@ -11,9 +11,7 @@
     "install-webpack": "npm install react-native-web && npm install babel-plugin-react-native-web webpack webpack-cli webpack-dev-server html-webpack-plugin react-dom babel-loader url-loader @svgr/webpack && mkdir public && git clone https://github.com/camividalt/files-react-native-web/ && mv files-react-native-web/public/index.html ./public && mv files-react-native-web/App.web.tsx ./ && mv files-react-native-web/index.web.js ./ && mv files-react-native-web/webpack.config.js ./ && rm -rf files-react-native-web",
     "uninstall-webpack": "npm uninstall react-native-web && npm uninstall babel-plugin-react-native-web webpack webpack-cli webpack-dev-server html-webpack-plugin react-dom babel-loader url-loader @svgr/webpack && rm -rf public/ && rm -rf index.web.js && rm -rf App.web.tsx && rm -rf webpack.config.js",
     "build-webpack": "rm -rf dist/ && webpack --mode=production --config webpack.config.js",
-    "web": "webpack serve --mode=development --config webpack.config.js", 
-    "run ios": "npx react-native run-ios",
-    "run android": "npx react-native run-android",
+    "web": "webpack serve --mode=development --config webpack.config.js",  
     "publish": "npm publish --registry http://localhost:4873"
   },
   "dependencies": {
