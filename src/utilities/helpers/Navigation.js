@@ -1,20 +1,11 @@
 /* -------------- Libraries - React ------------- */
 import React from 'react';
 import {
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
-    StyleSheet,
     Text,
-    useColorScheme,
     View,
-  } from 'react-native';
-/* -------------- Global Components ------------- */
-// import CSReturnButton from '../../components/navigation/CSReturnButton';
-// import CSHeader, { headerColor } from '../../components/navigation/CSHeader';
-/* ------------------ Utilities ----------------- */
+} from 'react-native';
 
-export const configureGradientHeader = ({ back, navigation, route, options } ) => {
+export const configureGradientHeader = ({ back, navigation, route, options }) => {
     const navigationParamTitle = route?.params?.title;
     const title =
         navigationParamTitle !== undefined
@@ -32,7 +23,7 @@ export const configureGradientHeader = ({ back, navigation, route, options } ) =
     //             ? colors.BLACK
     //             : colors.WHITE} />
     //     : undefined
-    
+
     return (
         // <CSHeader
         //     title={title}

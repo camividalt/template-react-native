@@ -1,15 +1,18 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { View, Modal, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 import Header from '../../../components/navigation/Header';
 import Button from '../../../components/Button';
 import ReturnButton from '../../../components/navigation/ReturnButton';
-import { COLORS, WHITE, BLUE, GRAY, RED } from '../../../../utilities/styles/Colors';
+import { COLORS, WHITE, RED } from '../../../../utilities/styles/Colors';
 import Message from '../../../components/Message';
+import useGetAccessToken from './hooks/useGetAccessToken';
 
 const StoresContainer = (props) => {
     const navigation = useNavigation();
+    const { loginHandler, loadLogin } = useGetAccessToken({ phone: '89662442', login: props.login }); 
+
     return (
         <>
             <View>
@@ -29,20 +32,32 @@ const StoresContainer = (props) => {
                 />
                 <View style={{ marginTop: 50 }}>
                     <View style={{ alignItems: 'center' }}>
-                        <Message
-                            text={props.login.accessToken}
-                            font="bold"
-                            size={16}
-                            color={COLORS(RED, 1)}
-                        />
-                        <Button type="blue">
+                        <View>
                             <Message
-                                text={`POST ${props.login.accessToken}`}
+                                text='AccessToken: '
                                 font="bold"
                                 size={16}
-                                color={COLORS(WHITE, 1)}
+                                color={COLORS(RED, 1)}
                             />
-                            <ActivityIndicator color={COLORS(WHITE, 1)} />
+                            <Message
+                                text={props.login.accessToken}
+                                font="bold"
+                                size={11}
+                                color={COLORS(RED, 1)}
+                            />
+                        </View>
+
+                        <Button type="blue" onPress={() => loginHandler()}>
+                            {
+                                !loadLogin ? (
+                                    <Message
+                                        text="Get AccessToken"
+                                        font="bold"
+                                        size={16}
+                                        color={COLORS(WHITE, 1)}
+                                    />
+                                ) : (<ActivityIndicator color={COLORS(WHITE, 1)} />)
+                            }
                         </Button>
                         <View style={{ marginVertical: 20 }} />
                         <Button type="blue">
